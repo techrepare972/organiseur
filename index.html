@@ -253,7 +253,14 @@
         import { getFirestore, collection, doc, setDoc, addDoc, updateDoc, deleteDoc, query, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
 
         // --- Firebase Config ---
-        const firebaseConfig = JSON.parse(__firebase_config);
+        const firebaseConfig = {
+  apiKey: "AIzaSyDWB-2PCqA-lNNgPcBIGwcg2FzOjdgUCtM",
+  authDomain: "organiseur.firebaseapp.com",
+  projectId: "organiseur",
+  storageBucket: "organiseur.firebasestorage.app",
+  messagingSenderId: "1071813822553",
+  appId: "1:1071813822553:web:884c5bf87a81b928494948"
+};
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
