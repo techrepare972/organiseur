@@ -6,7 +6,7 @@
     <title>Tech Precision - Organiseur Professionnel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <!-- Compression d'image -->
+    <!-- Image Compression -->
     <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.1/dist/browser-image-compression.js"></script>
     <!-- Signature Pad -->
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
@@ -71,7 +71,6 @@
             @apply text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-xl border; 
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
@@ -81,7 +80,7 @@
 
     <div class="container mx-auto p-4 md:p-10 max-w-6xl">
 
-        <!-- HEADER UNIQUE -->
+        <!-- HEADER -->
         <header class="text-center mb-16 relative">
             <div class="inline-flex items-center gap-3 bg-slate-900 text-white py-3 px-8 rounded-[2rem] mb-8 shadow-2xl shadow-slate-900/20">
                 <span class="text-2xl">🔬</span>
@@ -95,7 +94,7 @@
             </p>
         </header>
 
-        <!-- DASHBOARD ANALYTICS -->
+        <!-- DASHBOARD -->
         <section id="dashboard" class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             <div class="stat-card bg-white p-6 rounded-[2.5rem] border border-slate-100 shadow-sm text-center">
                 <p class="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2">Rapports</p>
@@ -115,7 +114,7 @@
             </div>
         </section>
 
-        <!-- FORMULAIRE PREMIUM -->
+        <!-- FORMULAIRE -->
         <section id="form-container" class="mb-20 p-8 md:p-12 bg-white rounded-[3.5rem] shadow-2xl shadow-slate-200 border border-slate-50 relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-50 rounded-full blur-3xl opacity-50"></div>
             
@@ -154,7 +153,7 @@
 
                     <div class="md:col-span-2">
                         <label class="block mb-2 text-xs font-black uppercase text-slate-400 tracking-widest ml-1">Notes & Diagnostic</label>
-                        <textarea id="comments" class="form-input" rows="4" placeholder="Détails techniques, rebillage, composants changés..."></textarea>
+                        <textarea id="comments" class="form-input" rows="4" placeholder="Détails techniques, composants changés..."></textarea>
                     </div>
 
                     <div id="field-photo-container" class="md:col-span-2 flex items-center gap-10 p-8 bg-slate-50/50 rounded-[2.5rem] border border-slate-100 shadow-inner">
@@ -172,7 +171,7 @@
                         </div>
                     </div>
 
-                    <div class="md:col-span-2 pt-6">
+                    <div class="md:col-span-2 pt-4">
                         <button type="submit" id="btn-submit" class="btn btn-primary w-full text-xl py-6 rounded-[2rem]">
                             Enregistrer l'intervention
                         </button>
@@ -200,11 +199,11 @@
             
             <div id="loading" class="text-center py-40">
                 <div class="inline-block animate-spin rounded-full h-16 w-16 border-[6px] border-teal-500 border-t-transparent shadow-xl"></div>
-                <p class="mt-8 text-slate-400 font-black tracking-widest uppercase text-sm">Connexion Sécurisée...</p>
+                <p class="mt-8 text-slate-400 font-black tracking-widest uppercase text-sm">Connexion Cloud...</p>
             </div>
             
             <div id="empty-state" class="hidden text-center py-40 bg-white rounded-[4rem] border-4 border-dashed border-slate-100">
-                <p class="text-slate-200 text-4xl font-black italic">Base de données vide</p>
+                <p class="text-slate-200 text-4xl font-black italic">Aucune donnée</p>
             </div>
         </section>
     </div>
@@ -218,7 +217,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="md:col-span-2"><label class="text-xs font-black uppercase text-slate-400 ml-1 block mb-2">Client</label><input type="text" id="edit-name" class="form-input" required></div>
                     <div class="md:col-span-2"><label class="text-xs font-black uppercase text-slate-400 ml-1 block mb-2">Appareil</label><input type="text" id="edit-device" class="form-input"></div>
-                    <div class="md:col-span-2"><label class="text-xs font-black uppercase text-slate-400 ml-1 block mb-2">Problème</label><input type="text" id="edit-item" class="form-input" required></div>
+                    <div class="md:col-span-2"><label class="text-xs font-black uppercase text-slate-400 ml-1 block mb-2">Objet</label><input type="text" id="edit-item" class="form-input" required></div>
                     <div><label class="text-xs font-black uppercase text-slate-400 ml-1 block mb-2">Date</label><input type="date" id="edit-deadline" class="form-input" required></div>
                     <div class="md:col-span-2"><label class="text-xs font-black uppercase text-slate-400 ml-1 block mb-2">Observations</label><textarea id="edit-comments" class="form-input" rows="5"></textarea></div>
                     <div class="md:col-span-2 flex justify-end gap-6 pt-8 border-t border-slate-100">
@@ -232,7 +231,7 @@
 
     <!-- MODAL SIGNATURE -->
     <div id="signature-modal" class="fixed inset-0 bg-slate-900/90 z-50 flex items-center justify-center p-6">
-        <div class="bg-white p-12 rounded-[4rem] shadow-2xl w-full max-w-md text-center">
+        <div class="bg-white p-12 rounded-[4rem] shadow-2xl w-full max-w-md text-center border border-white/20">
             <h2 class="text-3xl font-black text-slate-900 mb-2 tracking-tighter">Bon d'Accord</h2>
             <p class="text-slate-400 mb-10 font-medium">Signature manuelle du client</p>
             <div class="bg-slate-50 border-2 border-slate-100 rounded-[2.5rem] overflow-hidden mb-12 shadow-inner ring-12 ring-slate-50/50">
@@ -246,25 +245,28 @@
         </div>
     </div>
 
-    <!-- FIREBASE SYSTEM -->
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
-        import { getFirestore, collection, doc, setDoc, addDoc, updateDoc, deleteDoc, query, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
+        import { getAuth, signInAnonymously, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
+        import { getFirestore, collection, doc, addDoc, updateDoc, deleteDoc, query, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
 
-        // --- Firebase Config ---
+        // --- Firebase Config (Maintained from User) ---
         const firebaseConfig = {
-  apiKey: "AIzaSyDWB-2PCqA-lNNgPcBIGwcg2FzOjdgUCtM",
-  authDomain: "organiseur.firebaseapp.com",
-  projectId: "organiseur",
-  storageBucket: "organiseur.firebasestorage.app",
-  messagingSenderId: "1071813822553",
-  appId: "1:1071813822553:web:884c5bf87a81b928494948"
-};
+            apiKey: "AIzaSyDWB-2PCqA-lNNgPcBIGwcg2FzOjdgUCtM",
+            authDomain: "organiseur.firebaseapp.com",
+            projectId: "organiseur",
+            storageBucket: "organiseur.firebasestorage.app",
+            messagingSenderId: "1071813822553",
+            appId: "1:1071813822553:web:884c5bf87a81b928494948"
+        };
+
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'tech-precision-final-v3';
+        
+        // Internal platform rule: Use strict paths
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'tech-precision-pro-v3';
+        const entriesPath = ['artifacts', appId, 'public', 'data', 'entries'];
 
         const signaturePad = new SignaturePad(document.getElementById('signature-pad'));
         const LOGO_B64 = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAA4AKADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1VZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1VZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX2t/j5+v/aAAwDAQACEQMRAD8A/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//Z';
@@ -283,45 +285,47 @@
         let activeRecordId = null;
         let user = null;
 
-        // --- Auth Implementation ---
-        const authProc = async () => {
-            if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                await signInWithCustomToken(auth, __initial_auth_token);
-            } else {
+        // --- AUTH ---
+        const initAuth = async () => {
+            try {
+                // Rule 3: Auth first
                 await signInAnonymously(auth);
+            } catch (err) {
+                console.error("Auth error:", err);
             }
         };
-        authProc();
+        initAuth();
 
         onAuthStateChanged(auth, (u) => {
             user = u;
             if (user) startSync();
         });
 
-        // --- Sync & Data Logic ---
+        // --- SYNC ---
         function startSync() {
             if (!user) return;
-            const entriesCol = collection(db, 'artifacts', appId, 'public', 'data', 'entries');
+            // Rule 1: Use specific path
+            const entriesCol = collection(db, ...entriesPath);
             onSnapshot(query(entriesCol), (snap) => {
                 currentData = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+                // Sort in memory as per Rule 2
                 currentData.sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0));
                 refreshUI();
                 loading.style.display = 'none';
-            }, (err) => console.error("Sync error:", err));
+            }, (err) => {
+                console.error("Firestore sync error:", err);
+                if (err.message.includes('permissions')) {
+                    alert("ERREUR PERMISSIONS : Vous devez configurer les règles Firestore dans votre console Firebase.");
+                }
+            });
         }
 
         function refreshUI() {
-            const stats = {
-                reports: currentData.filter(d => (d.type || 'report') === 'report').length,
-                tasks: currentData.filter(d => d.type === 'task').length,
-                total: currentData.length
-            };
-            document.getElementById('stat-reports').textContent = stats.reports;
-            document.getElementById('stat-tasks').textContent = stats.tasks;
-            document.getElementById('stat-total').textContent = stats.total;
+            document.getElementById('stat-reports').textContent = currentData.filter(d => (d.type || 'report') === 'report').length;
+            document.getElementById('stat-tasks').textContent = currentData.filter(d => d.type === 'task').length;
+            document.getElementById('stat-total').textContent = currentData.length;
 
             const filtered = currentData.filter(d => currentFilter === 'all' || (d.type || 'report') === currentFilter);
-            
             if (filtered.length === 0) {
                 emptyState.classList.remove('hidden');
                 mainGrid.innerHTML = '';
@@ -332,11 +336,11 @@
             mainGrid.innerHTML = filtered.map(d => {
                 const isReport = (d.type || 'report') === 'report';
                 const color = isReport ? 'teal' : 'purple';
-                const date = d.deadline ? new Date(d.deadline).toLocaleDateString('fr-FR') : 'Sans date';
+                const date = d.deadline ? new Date(d.deadline).toLocaleDateString('fr-FR') : 'Non défini';
                 
                 return `
                 <div class="card border-t-[10px] border-${color}-600" data-id="${d.id}">
-                    ${isReport && d.photo ? `<img src="${d.photo}" class="w-full h-56 object-cover bg-slate-50 border-b border-slate-100">` : ''}
+                    ${isReport && d.photo ? `<img src="${d.photo}" class="w-full h-56 object-cover bg-slate-50 border-b">` : ''}
                     <div class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <span class="status-badge bg-${color}-50 text-${color}-700 border-${color}-100">${isReport ? 'Rapport' : 'Tâche'}</span>
@@ -345,7 +349,7 @@
                         <h4 class="text-2xl font-bold text-slate-900 leading-tight mb-2">${d.item}</h4>
                         <p class="text-slate-500 font-bold mb-6">${d.name} ${d.device ? `• <span class="text-slate-300">${d.device}</span>` : ''}</p>
                         <div class="bg-slate-50 p-5 rounded-[1.5rem] italic text-slate-600 text-xs border border-slate-100">
-                            ${d.comments ? d.comments : 'Aucune observation.'}
+                            ${d.comments || 'Aucune observation.'}
                         </div>
                         ${d.signature ? `<div class="mt-6 pt-6 border-t border-slate-50"><p class="text-[10px] font-bold text-slate-300 uppercase mb-2">Accord Client :</p><img src="${d.signature}" class="h-16 opacity-80"></div>` : ''}
                     </div>
@@ -359,7 +363,7 @@
             }).join('');
         }
 
-        // --- Interaction Logic ---
+        // --- INTERACTIONS ---
         async function compressAndEncode(file) {
             const options = { maxSizeMB: 0.15, maxWidthOrHeight: 900, useWebWorker: true };
             const compressed = await imageCompression(file, options);
@@ -398,7 +402,7 @@
 
         mainForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            if (!user) return alert("Chargement cloud...");
+            if (!user) return;
             const btn = document.getElementById('btn-submit');
             btn.disabled = true; btn.innerHTML = '⚙️ Synchronisation...';
 
@@ -414,7 +418,7 @@
             };
 
             try {
-                const entriesCol = collection(db, 'artifacts', appId, 'public', 'data', 'entries');
+                const entriesCol = collection(db, ...entriesPath);
                 await addDoc(entriesCol, payload);
                 mainForm.reset();
                 document.getElementById('btn-remove-photo').click();
@@ -428,9 +432,11 @@
             const data = currentData.find(d => d.id === id);
 
             if (e.target.closest('.delete-btn')) {
-                if (confirm("Supprimer définitivement ?")) {
-                    const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'entries', id);
-                    await deleteDoc(docRef);
+                if (confirm("Supprimer cet enregistrement ?")) {
+                    try {
+                        const docRef = doc(db, ...entriesPath, id);
+                        await deleteDoc(docRef);
+                    } catch (err) { alert(err.message); }
                 }
             }
 
@@ -449,8 +455,8 @@
                 activeRecordId = id;
                 signatureModal.style.display = 'flex';
                 setTimeout(() => {
-                    const ratio = Math.max(window.devicePixelRatio || 1, 1);
                     const canvas = document.getElementById('signature-pad');
+                    const ratio = Math.max(window.devicePixelRatio || 1, 1);
                     canvas.width = canvas.offsetWidth * ratio;
                     canvas.height = canvas.offsetHeight * ratio;
                     canvas.getContext("2d").scale(ratio, ratio);
@@ -462,15 +468,17 @@
         document.getElementById('edit-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const id = document.getElementById('edit-id').value;
-            const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'entries', id);
-            await updateDoc(docRef, {
-                name: document.getElementById('edit-name').value,
-                device: document.getElementById('edit-device').value,
-                item: document.getElementById('edit-item').value,
-                deadline: document.getElementById('edit-deadline').value,
-                comments: document.getElementById('edit-comments').value
-            });
-            editModal.style.display = 'none';
+            try {
+                const docRef = doc(db, ...entriesPath, id);
+                await updateDoc(docRef, {
+                    name: document.getElementById('edit-name').value,
+                    device: document.getElementById('edit-device').value,
+                    item: document.getElementById('edit-item').value,
+                    deadline: document.getElementById('edit-deadline').value,
+                    comments: document.getElementById('edit-comments').value
+                });
+                editModal.style.display = 'none';
+            } catch (err) { alert(err.message); }
         });
 
         document.getElementById('btn-save-signature').addEventListener('click', async () => {
@@ -479,7 +487,7 @@
             btn.disabled = true;
             try {
                 const b64 = signaturePad.toDataURL();
-                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'entries', activeRecordId);
+                const docRef = doc(db, ...entriesPath, activeRecordId);
                 await updateDoc(docRef, { signature: b64 });
                 signatureModal.style.display = 'none';
             } catch (err) { alert(err.message); } finally { btn.disabled = false; }
@@ -497,6 +505,15 @@
         }));
 
         // --- PDF Generation ---
+        const getB64 = url => new Promise((res) => {
+            const img = new Image(); img.crossOrigin = 'Anonymous';
+            img.onload = () => {
+                const c = document.createElement('canvas'); c.width = img.width; c.height = img.height;
+                c.getContext('2d').drawImage(img, 0, 0); res(c.toDataURL('image/jpeg'));
+            };
+            img.onerror = () => res(null); img.src = url;
+        });
+
         document.getElementById('btn-global-pdf').addEventListener('click', async () => {
             const reports = currentData.filter(d => (d.type || 'report') === 'report');
             if (reports.length === 0) return alert("Aucun rapport.");
@@ -507,35 +524,25 @@
             for (let i = 0; i < reports.length; i++) {
                 if (i > 0) docPdf.addPage();
                 const d = reports[i];
-
                 docPdf.addImage(LOGO_B64, 'JPEG', 15, 10, 45, 12);
                 docPdf.setFillColor(34, 147, 146).rect(0, 28, 210, 12, 'F');
                 docPdf.setFontSize(14).setTextColor(255).setFont('helvetica', 'bold').text("RAPPORT D'INTERVENTION", 105, 36, { align: 'center' });
-
                 docPdf.setFontSize(10).setTextColor(100).setFont('helvetica', 'normal').text(`Date : ${new Date(d.deadline).toLocaleDateString('fr-FR')}`, 195, 18, { align: 'right' });
                 docPdf.setFontSize(12).setTextColor(0).setFont('helvetica', 'bold').text('Client :', 15, 55);
-                docPdf.setFont('helvetica', 'normal').text(d.name || 'N/A', 50, 55);
-                docPdf.setFont('helvetica', 'bold').text('Symptôme :', 15, 65);
-                docPdf.setFont('helvetica', 'normal').text(docPdf.splitTextToSize(d.item || 'N/A', 145), 50, 65);
-
+                docPdf.setFont('helvetica', 'normal').text(d.name || 'N/A', 40, 55);
+                docPdf.setFont('helvetica', 'bold').text('Objet :', 15, 65);
+                docPdf.setFont('helvetica', 'normal').text(docPdf.splitTextToSize(d.item || 'N/A', 150), 40, 65);
                 let y = 85;
-                docPdf.setFont('helvetica', 'bold').text('Notes & Observations :', 15, y); y += 8;
+                docPdf.setFont('helvetica', 'bold').text('Notes :', 15, y); y += 8;
                 const notes = docPdf.splitTextToSize(d.comments || 'Aucune note.', 180);
                 docPdf.setFont('helvetica', 'normal').text(notes, 15, y);
-                y += (notes.length * 6) + 15;
-
-                if (d.photo) {
-                    try { docPdf.addImage(d.photo, 'JPEG', 15, y, 100, 75); y += 85; } catch(e) {}
-                }
-                if (d.signature) {
-                    try { docPdf.setFont('helvetica', 'bold').text("Signature Client :", 15, y); y += 5; docPdf.addImage(d.signature, 'PNG', 15, y, 50, 25); } catch(e) {}
-                }
-                docPdf.setFontSize(7).setTextColor(150).text("Tech Precision - Rapport Expert Certifié", 105, 285, { align: 'center' });
+                y += (notes.length * 5) + 15;
+                if (d.photo) { try { docPdf.addImage(d.photo, 'JPEG', 15, y, 100, 75); y += 85; } catch(e) {} }
+                if (d.signature) { try { docPdf.setFont('helvetica', 'bold').text("Signature Client :", 15, y); y += 5; docPdf.addImage(d.signature, 'PNG', 15, y, 50, 25); } catch(e) {} }
             }
-            docPdf.save(`TechPrecision_Archives_${new Date().toISOString().slice(0,10)}.pdf`);
+            docPdf.save(`TechPrecision_Archives.pdf`);
             btn.textContent = 'PDF Global';
         });
-
     </script>
 </body>
 </html>
